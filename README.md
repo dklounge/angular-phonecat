@@ -217,10 +217,6 @@ info.
   * run the tests from console with [Karma](http://karma-runner.github.io) via
     `scripts/e2e-test.sh` or `script/e2e-test.bat`
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 793bb95930fa7f4530776c1379e5f9de2eed19fd
 ## Application Directory Layout
 
     app/                --> all of the files to be used in production
