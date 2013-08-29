@@ -136,6 +136,46 @@ based on angular-seed, the instructions apply to it as well.
 2. navigate your browser to `http://localhost:8000/app/index.html` to see the app running in your
    browser.
 
+### step-7
+
+- Introduce the [$route] service which allows binding URLs for deep-linking with views
+  - Replace content of root controller PhonesCtrl with [$route] configuration
+  - Map `/phones' to PhoneListCtrl and partails/phones-list.html
+  - Map `/phones/phone-id' to PhoneDetailCtrl and partails/phones-detail.html
+  - Copy deep linking parameters to root controller `params` property for access in sub controllers
+  - Replace content of index.html with [ng:view]
+- Create PhoneListCtrl view
+  - Move code which fetches phones data into PhoneListCtrl
+  - Move existing HTML from index.html to partials/phone-list.html
+- Create PhoneDetailsCtrl view
+  - Wire [$route] service to map `/phanes/phone-id` to map to this controller.
+  - Empty PhoneDetailsCtrl
+  - Place holder partials/phane-details.html
+
+### step-8
+
+- Fetch data for and render phone detail view
+  - [$xhr] to fetch details for a specific phone
+  - template for the phone detailed view
+- CSS to make it look pretty
+- Detail data for phones in JSON format
+
+### step-9
+
+- replace [$xhr] with [$resource]
+  - demonstrate how a resource can be created using a [service]
+
+## Development with angular-seed
+
+The following docs apply to all angular-seed projects and since the phonecat tutorial is a project
+based on angular-seed, the instructions apply to it as well.
+
+### Running the app during development
+
+1. run `./scripts/web-server.js`
+2. navigate your browser to `http://localhost:8000/app/index.html` to see the app running in your
+   browser.
+
 ### Running unit tests
 
 Requires java.
@@ -174,9 +214,13 @@ info.
 * serve your project directory with your http/backend server or node.js + `scripts/web-server.js`
 * to run do one of:
   * open `http://localhost:port/test/e2e/runner.html` in your browser
-  * run the tests from console with [Testacular](vojtajina.github.com/testacular) via
+  * run the tests from console with [Karma](http://karma-runner.github.io) via
     `scripts/e2e-test.sh` or `script/e2e-test.bat`
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 793bb95930fa7f4530776c1379e5f9de2eed19fd
 ## Application Directory Layout
 
     app/                --> all of the files to be used in production
@@ -201,14 +245,14 @@ info.
         partial1.html
         partial2.html
 
-    config/testacular.conf.js        --> config file for running unit tests with Testacular
-    config/testacular-e2e.conf.js    --> config file for running e2e tests with Testacular
+    config/karma.conf.js        --> config file for running unit tests with Karma
+    config/karma-e2e.conf.js    --> config file for running e2e tests with Karma
 
     scripts/            --> handy shell/js/ruby scripts
-      e2e-test.sh       --> runs end-to-end tests with Testacular (*nix)
-      e2e-test.bat      --> runs end-to-end tests with Testacular (windows)
-      test.bat          --> autotests unit tests with Testacular (windows)
-      test.sh           --> autotests unit tests with Testacular (*nix)
+      e2e-test.sh       --> runs end-to-end tests with Karma (*nix)
+      e2e-test.bat      --> runs end-to-end tests with Karma (windows)
+      test.bat          --> autotests unit tests with Karma (windows)
+      test.sh           --> autotests unit tests with Karma (*nix)
       web-server.js     --> simple development webserver based on node.js
 
     test/               --> test source files and libraries
